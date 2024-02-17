@@ -4,8 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket collect website</title>
+     <!-- deisy ui and tailwind css linkup -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body>
     
+    <header>
+        <div class="container mx-auto px-4">
+            <div class="navbar bg-base-100 w-full">
+              <div class="navbar-start w-1/4 lg:hidden sm:block">
+                <div class="dropdown">
+                  <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                  </div>
+                  <ul tabindex="0" class="menu menu-sm dropdown-content  mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a class="text-green-500">Home</a></li>
+                    <li><a class="hover:text-green-500 cursor-pointer">About</a></li>
+                    <li><a class="hover:text-error cursor-pointer">Destination</a></li>
+                    <li><a class="hover:text-error cursor-pointer">Search</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="navbar-center lg:flex-1 ">
+                <a class=" cursor-pointer font-bold text-2xl uppercase  ">B-Ticket<span class="text-green-500 lg:text-3xl">'</span>s</a>
+              </div>
+               <div class="lg:flex-1 max-[676px]:hidden">
+                  <ul  class=" flex justify-between gap-8 text-lg">
+                    <li><a class="text-green-500">Home</a></li>
+                    <li><a class="hover:text-green-500 cursor-pointer">About</a></li>
+                    <li><a class="hover:text-green-500 cursor-pointer">Destination</a></li>
+                    <li><a class="hover:text-green-500 cursor-pointer">Search</a></li>
+                  </ul>
+               </div>
+              <div class="navbar-end flex-1">
+                <button class="btn bg-green-50 text-green-400 capitalize hover:bg-green-50 lg:text-lg sm:text-md border-2 border-green-400 hover:border-green-400">
+                 Bus
+                 <img src="images/bus-icon.png" alt="">
+                  
+                </button>
+              </div>
+            </div>
+         </div>
+
+    </header>
+    <!-- ==========================header section end====================== -->
+    <main>
+
+    <!-- -------------------first container-------------------------- -->
+
+     <div class="container mx-auto px-4 mt-6">
+        <div class="row bg-cover bg-no-repeat bg-center h-[80vh] rounded-3xl" style="background-image: url(images/banner.png);">
+           <div class="col mt-10 pt-10">
+            <h1 class="lg:text-8xl capitalize  text-white text-center pt-24 font-bold sm:text-3xl">End-to-End Tavels with</h1>
+            <h2 class="text-5xl text-[#1DD100] capitalize text-center pt-14 font-bold">B poribohon</h2>
+            <p class="text-lg text-center text-white lg:px-56 mt-6">Dhaka to Rajshahi is a route spread over 244.8 kilometers. Currently, services for this route. These operators provide Hino 1J Pluss, Non AC, branded bus services. </p>
+           </div>
+            <div class="col flex justify-center mt-14">
+                <Button id="btnshow" class="btn px-10 hover:bg-[#1DD100] capitalize text-center text-xl bg-[#1DD100] border-none">
+                    buy Ticket
+                </Button>
+            </div>
+        </div>
+     </div>
+  <!-- -----------second contaienr---------------------- -->
+   <div class="container mx-auto px-4 -mt-20">
+    <div class="row px-10 grid grid-cols-3 gap-6">
+        <div class="col p-10">
+            <div class="card card-side bg-base-100 shadow-xl border-b-2 border-[#1DD100] p-4">
+                <figure><img src="images/people.png" alt="Movie"/></figure>
+                <div class="card-body">
+                  <h2 class="card-title">500k+</h2>
+                  <p>Registered users</p>
+                </div>
+              </div>
+        </div>
+        <div class="col p-10">
+            <div class="card card-side bg-base-100 shadow-xl border-b-2 border-[#1DD100] p-4">
+                <figure><img src="images/ticket-cupon.png" alt="Movie"/></figure>
+                <div class="card-body">
+                  <h2 class="card-title">1.7 lacks</h2>
+                  <p>Ticket sold</p>
+                </div>
+              </div>
+        </div>
+        <div class="col p-10">
+            <div class="card card-side bg-base-100 shadow-xl border-b-2 border-[#1DD100] p-4">
+                <figure><img src="images/stoppage.png" alt="Movie"/></figure>
+                <div class="card-body">
+                  <h2 class="card-title">50k+</h2>
+                  <p>Rental partners</p>
+                </div>
+              </div>
+        </div>
+    </div>
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    <!-- ===============footer section start====================== -->
+    <footer>
+
+    </footer>
+    <script src="main.js"></script>
 </body>
 </html>
