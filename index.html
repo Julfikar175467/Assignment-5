@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <header>
+    <header class="" id="head">
         <div class="container mx-auto px-4">
             <div class="navbar bg-base-100 w-full">
               <div class="navbar-start w-1/4 lg:hidden sm:block">
@@ -50,7 +50,7 @@
 
     </header>
     <!-- ==========================header section end====================== -->
-    <main >
+    <main  class="" id="main">
 
     <!-- -------------------first container-------------------------- -->
 
@@ -342,7 +342,7 @@
                                     <input type="email" placeholder="Your Email ID" id="email" class="border-[1px] border-[#E6E6E8] rounded-xl w-full py-4 px-2 outline-none" required>
                                 </div>
                                 <div class="div-3 mt-5">
-                                    <button class="w-full btn bg-[#1DD100] hover:bg-[#1DD100] text-white capitalize ">Next</button>
+                                    <button id="Next" class="w-full btn bg-[#1DD100] hover:bg-[#1DD100] text-white capitalize" disabled>Next</button>
                                 </div>
                         </div>
                         <div class="col lg:flex justify-around mt-5">
@@ -362,8 +362,30 @@
 
 
     </main>
+  <!-- =============================Successful section================================ -->
+  <section class="hidden" id="success" >
+    <div class="container bg-[#F2F1F1] h-screen mx-auto px-4">
+          <div class="row flex justify-center items-center pt-52">
+            <div class="col h-[60vh] w-[70vh] shadow-xl bg-white rounded-xl ">
+              <div class="card pt-12">
+                <figure class="px-10 pt-10">
+                  <img src="images/success.png" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class="card-body items-center text-center">
+                  <h2 class="card-title text-3xl text-[#27AE60] ">Success</h2>
+                  <p class="capitalize font-bold">Thank you for booking our bus seats.We are working hard to find the best service and deals for you</p>
+                  <p class="capitalize">shortly you will find a confirmation in your email</p>
+                  <div class="card-actions w-full block">
+                    <button class="btn bg-[#27AE60] text-white capitalize hover:bg-[#27AE60]">Continue</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </section>
     <!-- ===============footer section start====================== -->
-    <footer class="bg-black">
+    <footer class="bg-black" id="footer">
       <div class="container  mx-auto px-4 max-[576px]:py-10">
          <div class="row lg:flex  justify-between lg:pt-40 mb-5 items-center">
             <div class="col text-white mb-2 ">
