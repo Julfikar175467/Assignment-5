@@ -9,43 +9,43 @@ for(let index=0; index<btn.length;index++){
 //    ------------------addEventliseter--------------
      btns.addEventListener("click",myfunction);
      function myfunction(){
-        // ------------------title setup-------------
-         btns.style.background="#1DD100";
-         let ticketName=btns.innerText;
-         const title=document.getElementById("seat");
-          const titleValue=document.createElement("h2");
-            titleValue.innerText=ticketName;
-            title.appendChild(titleValue)
-        // -----------------------------class setup---------------------- 
-         const clas=document.getElementById("Class");
-         const classVlaue=document.createElement("h2");
-          classVlaue.innerText="Economics";
-          clas.appendChild(classVlaue);
-         //---------------------------price setup-----------------------
-         const price=document.getElementById("price");
-         const priceValue=document.createElement("h3");
-          priceValue.innerText=550;
-          //console.log(typeof priceValue.innerText)
-          price.appendChild(priceValue);
-        //   ----------------title count-------------------
-         let count=document.getElementById("count");
-           count.innerText=countValue;
-           countValue++;
-         let setcount=document.getElementById("setNumber");
-          setcount.innerText=setNumber;
-          setNumber--;
+            if(!btns.disabled){
+              // ------------------title setup-------------
+              btns.style.background="#1DD100";
+              let ticketName=btns.innerText;
+              const title=document.getElementById("seat");
+                const titleValue=document.createElement("h2");
+                  titleValue.innerText=ticketName;
+                  title.appendChild(titleValue)
+              // -----------------------------class setup---------------------- 
+              const clas=document.getElementById("Class");
+              const classVlaue=document.createElement("h2");
+                classVlaue.innerText="Economics";
+                clas.appendChild(classVlaue);
+              //---------------------------price setup-----------------------
+              const price=document.getElementById("price");
+              const priceValue=document.createElement("h3");
+                priceValue.innerText=550;
+                //console.log(typeof priceValue.innerText)
+                price.appendChild(priceValue);
+              //   ----------------title count-------------------
+              let count=document.getElementById("count");
+                count.innerText=countValue;
+                countValue++;
+              let setcount=document.getElementById("setNumber");
+                setcount.innerText=setNumber;
+                setNumber--;
 
-        //   ----------------price calculete----------------
-         let value=priceValue.innerText;
-         let valueInt=parseFloat(value);
-         totalValueSetup=document.getElementById("totalPrice");
-         totalValu+=valueInt;
-         totalValueSetup.innerText=totalValu.toFixed(2);
-        //  ---------------button disabled------------  
-      
-          
-     }
-    
+              //   ----------------price calculete----------------
+              let value=priceValue.innerText;
+              let valueInt=parseFloat(value);
+              totalValueSetup=document.getElementById("totalPrice");
+              totalValu+=valueInt;
+              totalValueSetup.innerText=totalValu.toFixed(2);
+              //  ---------------button disabled------------  
+              btns.disabled=true;
+            }
+       }    
 }
 
 
@@ -103,11 +103,22 @@ function myApply(){
     
 
   })
+
+  // -----------------succent to main form--------------
+  const continu=document.getElementById("continue");
+  continu.addEventListener("click",function(){
+     addClass("success")
+     removeClass("head")
+     removeClass("main")
+     removeClass("footer")
+  })
+
+
  // -------------------------next button disabled function------------------
      const phnInput=document.getElementById("phn");
       phnInput.addEventListener("keyup",function (){
            const phninputValu=phnInput.value;
-           if(phninputValu !=="" && !isNaN(phninputValu)){
+           if(phninputValu !=="" && !isNaN(phninputValu && totalValu===550)){
             nextBtn.removeAttribute("disabled");
            }else{
             nextBtn.disabled=true;
