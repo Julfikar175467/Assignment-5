@@ -52,7 +52,7 @@ for(let index=0; index<btn.length;index++){
   keyup.addEventListener("keyup",mycoupn);
   function mycoupn(){
         let keyValue=keyup.value;
-        let couponValue=keyValue.toUpperCase()
+        let couponValue=keyValue.split(" ").join("").toUpperCase()
        if(couponValue=='NEW15' || couponValue=="COUPLE20"){
           apply.removeAttribute("disabled")
        }else{
@@ -71,19 +71,10 @@ function myApply(){
      btnbox.style.display="none";
      // ----------------discount value calculate=============
      if(totalValu>=2200){
-         if(inputValu=="NEW15"){
             discount=totalValu*0.15;
             grandValue=totalValu-discount;
             const discountValue=document.getElementById("grandPrice");
-            discountValue.innerText=grandValue.toFixed(2)
-         }
-         if(inputValu=="COUPLE20"){
-                discount=totalValu*0.2;
-                grandValue=totalValu-discount;
-                const discountValue=document.getElementById("grandPrice");
-                discountValue.innerText=grandValue.toFixed(2)
-            
-         }
+            discountValue.innerText=grandValue.toFixed(2) 
      }
      
     
