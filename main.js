@@ -5,7 +5,6 @@ let setNumber=39;
 let totalValu=0;
 for(let index=0; index<btn.length;index++){
     let btns=btn[index];
-    
 
 //    ------------------addEventliseter--------------
      btns.addEventListener("click",myfunction);
@@ -42,11 +41,11 @@ for(let index=0; index<btn.length;index++){
          totalValueSetup=document.getElementById("totalPrice");
          totalValu+=valueInt;
          totalValueSetup.innerText=totalValu.toFixed(2);
-        //  ---------------button disabled------------
+        //  ---------------button disabled------------  
       
-       
-              
+          
      }
+    
 }
 
 
@@ -65,7 +64,7 @@ for(let index=0; index<btn.length;index++){
        }
      
   }
-//   --------------btnApply-------------------
+//   --------------coupon code btnApply-------------------
 let apply=document.getElementById("btnCoupon");
 apply.addEventListener("click",myApply);
 function myApply(){
@@ -91,9 +90,7 @@ function myApply(){
        
 }
 
-// --==============================successNextButon=========================
-
-
+// --==============================successfull NextButon=========================
   const nextBtn=document.getElementById("Next");
   nextBtn.addEventListener("click",function(){
 
@@ -102,22 +99,23 @@ function myApply(){
     addClass("footer");
     // -------------------remove--------------
     removeClass("success");
-
-
-  })
-// ---------------next button disable function-------------------
-let phn=document.getElementById("phn")
-phn.addEventListener("keyup",function(){
-      let phonValue=phn.value;
-      const phonint=parseFloat(phonValue);
-      if(typeof phonint==="number"){
-        nextBtn.removeAttribute("disabled")
-      }else{
-        nextBtn.setAttribute("disabled")
-      }
+    // ---------------disabled function----------------
+    
 
   })
-  
+ // -------------------------next button disabled function------------------
+     const phnInput=document.getElementById("phn");
+      phnInput.addEventListener("keyup",function (){
+           const phninputValu=phnInput.value;
+           if(phninputValu !=="" && !isNaN(phninputValu)){
+            nextBtn.removeAttribute("disabled");
+           }else{
+            nextBtn.disabled=true;
+           }
+      })
+
+     
+
 
 // ==================basic function===================
  function addClass(name){
@@ -130,3 +128,4 @@ phn.addEventListener("keyup",function(){
      remove.classList.remove("hidden");
   }
 
+// --------------------------------end-------------------
