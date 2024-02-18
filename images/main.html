@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decrement Example</title>
+</head>
+<body>
+
+<input type="text" id="counter" value="10">
+<button id="decreaseButton">Decrease</button>
+
+<script>
+    document.getElementById('decreaseButton').addEventListener('click', decreaseCounter);
+
+    function decreaseCounter() {
+        var counterElement = document.getElementById('counter');
+        var currentValue = parseInt(counterElement.value);
+        
+        // Check if the current value is a valid number
+        if (!isNaN(currentValue)) {
+            // Decrement the value
+            counterElement.value = currentValue - 1;
+        } else {
+            alert('Invalid input! Please enter a valid number.');
+        }
+        
+        // Remove event listener to ensure the function is executed only once
+        document.getElementById('decreaseButton').removeEventListener('click', decreaseCounter);
+    }
+</script>
+
+</body>
+</html>
