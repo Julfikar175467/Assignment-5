@@ -42,9 +42,80 @@ for(let index=0; index<btn.length;index++){
          totalValueSetup=document.getElementById("totalPrice");
          totalValu+=valueInt;
          totalValueSetup.innerText=totalValu.toFixed(2);
-
-         
-          
               
      }
 }
+// =======================keyup coupon code setup---------========================
+ const keyup=document.getElementById("coupon");
+  const input=keyup.value;
+   const inputValu=input.toUpperCase();
+  keyup.addEventListener("keyup",mycoupn);
+  function mycoupn(){
+        let keyValue=keyup.value;
+        let couponValue=keyValue.toUpperCase()
+       if(couponValue=='NEW15' || couponValue=="COUPLE20"){
+          apply.removeAttribute("disabled")
+       }else{
+        apply.setAttribute("disabled")
+       }
+     
+  }
+//   --------------btnApply-------------------
+let apply=document.getElementById("btnCoupon");
+apply.addEventListener("click",myApply);
+function myApply(){
+     let coupnCode=document.getElementById("coupon").value;
+      let couponText=coupnCode.toUpperCase();
+    // --------------discount btn hiden----------------
+     const btnbox=document.getElementById("btnBox");
+     btnbox.style.display="none";
+     // ----------------discount value calculate=============
+     if(totalValu>=2200){
+         if(inputValu=="NEW15"){
+            discount=totalValu*0.15;
+            grandValue=totalValu-discount;
+            const discountValue=document.getElementById("grandPrice");
+            discountValue.innerText=grandValue.toFixed(2)
+         }
+         if(inputValu=="COUPLE20"){
+                discount=totalValu*0.2;
+                grandValue=totalValu-discount;
+                const discountValue=document.getElementById("grandPrice");
+                discountValue.innerText=grandValue.toFixed(2)
+            
+         }
+     }
+     
+    
+}
+
+
+
+// --==============================successNextButon=========================
+
+
+  const nextBtn=document.getElementById("Next");
+  nextBtn.addEventListener("click",function(){
+
+    addClass("head");
+    addClass("main");
+    addClass("footer");
+    // -------------------remove--------------
+    removeClass("success");
+
+
+  })
+
+// ==================basic function===================
+ function addClass(name){
+    const addId=document.getElementById(name);
+     addId.classList.add("hidden");
+ }
+
+  function removeClass(name){
+     const remove=document.getElementById(name);
+     remove.classList.remove("hidden");
+  }
+
+
+
