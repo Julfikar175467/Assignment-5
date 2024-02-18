@@ -42,9 +42,14 @@ for(let index=0; index<btn.length;index++){
          totalValueSetup=document.getElementById("totalPrice");
          totalValu+=valueInt;
          totalValueSetup.innerText=totalValu.toFixed(2);
+        //  ---------------button disabled------------
+      
+       
               
      }
 }
+
+
 // =======================keyup coupon code setup---------========================
  const keyup=document.getElementById("coupon");
   const input=keyup.value;
@@ -71,16 +76,20 @@ function myApply(){
      btnbox.style.display="none";
      // ----------------discount value calculate=============
      if(totalValu>=2200){
-            discount=totalValu*0.15;
+       if(couponText==="COUPLE20"){
+            discount=totalValu*0.2;
             grandValue=totalValu-discount;
             const discountValue=document.getElementById("grandPrice");
             discountValue.innerText=grandValue.toFixed(2) 
+       }else if(couponText==="NEW15"){
+            discount=totalValu*0.15;
+            grandValue=totalValu-discount;
+            const discountValue=document.getElementById("grandPrice");
+            discountValue.innerText=grandValue.toFixed(2)
+       }
      }
-     
-    
+       
 }
-
-
 
 // --==============================successNextButon=========================
 
@@ -96,6 +105,19 @@ function myApply(){
 
 
   })
+// ---------------next button disable function-------------------
+let phn=document.getElementById("phn")
+phn.addEventListener("keyup",function(){
+      let phonValue=phn.value;
+      const phonint=parseFloat(phonValue);
+      if(typeof phonint==="number"){
+        nextBtn.removeAttribute("disabled")
+      }else{
+        nextBtn.setAttribute("disabled")
+      }
+
+  })
+  
 
 // ==================basic function===================
  function addClass(name){
@@ -107,6 +129,4 @@ function myApply(){
      const remove=document.getElementById(name);
      remove.classList.remove("hidden");
   }
-
-
 
