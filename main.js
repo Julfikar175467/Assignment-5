@@ -112,6 +112,7 @@ function myApply(){
      removeClass("head")
      removeClass("main")
      removeClass("footer")
+     window.location.reload()
   })
 
 
