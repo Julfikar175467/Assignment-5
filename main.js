@@ -5,9 +5,10 @@ let setNumber=39;
 let totalValu=0;
 for(let index=0; index<btn.length;index++){
     let btns=btn[index];
-
+ 
 //    ------------------addEventliseter--------------
      btns.addEventListener("click",myfunction);
+    
      function myfunction(){
             if(!btns.disabled){
               // ------------------title setup-------------
@@ -120,7 +121,7 @@ function myApply(){
      const phnInput=document.getElementById("phn");
       phnInput.addEventListener("keyup",function (){
            const phninputValu=phnInput.value;
-           if(phninputValu !=="" && !isNaN(phninputValu)){
+           if(phninputValu !=="" && !isNaN(phninputValu) ){
             nextBtn.removeAttribute("disabled");
            }else{
             nextBtn.disabled=true;
