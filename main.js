@@ -120,7 +120,7 @@ function myApply(){
      const phnInput=document.getElementById("phn");
       phnInput.addEventListener("keyup",function (){
            const phninputValu=phnInput.value;
-           if(phninputValu !=="" && !isNaN(phninputValu && totalValu===550)){
+           if(phninputValu !=="" && !isNaN(phninputValu)){
             nextBtn.removeAttribute("disabled");
            }else{
             nextBtn.disabled=true;
