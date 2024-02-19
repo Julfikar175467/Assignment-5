@@ -72,7 +72,8 @@ function myApply(){
       let couponText=coupnCode.toUpperCase();
     // --------------discount btn hiden----------------
      const btnbox=document.getElementById("btnBox");
-     btnbox.style.display="none";
+     const copon=document.getElementById("coupon");
+    copon.style.display="none";
      // ----------------discount value calculate=============
      if(totalValu>=2200){
        if(couponText==="COUPLE20"){
