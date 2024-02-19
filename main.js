@@ -3,6 +3,7 @@ const btn=document.querySelectorAll("#btn");
 let countValue=1;
 let setNumber=39;
 let totalValu=0;
+let clickCount=0;
 for(let index=0; index<btn.length;index++){
     let btns=btn[index];
  
@@ -10,6 +11,7 @@ for(let index=0; index<btn.length;index++){
      btns.addEventListener("click",myfunction);
     
      function myfunction(){
+      clickCount++;
             if(!btns.disabled){
               // ------------------title setup-------------
               btns.style.background="#1DD100";
@@ -45,6 +47,12 @@ for(let index=0; index<btn.length;index++){
               totalValueSetup.innerText=totalValu.toFixed(2);
               //  ---------------button disabled------------  
               btns.disabled=true;
+            }
+            // -----------apply button enable-------------
+            if(clickCount==4){
+              apply.removeAttribute("disabled")
+            }else{
+              apply.setAttribute("disabled")
             }
        }    
 }
@@ -121,7 +129,7 @@ function myApply(){
      const phnInput=document.getElementById("phn");
       phnInput.addEventListener("keyup",function (){
            const phninputValu=phnInput.value;
-           if(phninputValu !=="" && !isNaN(phninputValu) ){
+           if(phninputValu !=="" && !isNaN(phninputValu)){
             nextBtn.removeAttribute("disabled");
            }else{
             nextBtn.disabled=true;
